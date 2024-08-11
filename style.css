@@ -1,0 +1,268 @@
+/* General styles for the body */
+body {
+    margin: 0; /* Remove default margin */
+    font-family: "Montserrat", sans-serif; /* Set font for the page */
+    font-size: 11pt; /* Set base font size */
+}
+
+/* Styles for the logo */
+#logo {
+    float: right; /* Position logo on the right */
+    max-height: 80px; /* Set maximum height for the logo */
+}
+
+/* Styles for the logo title */
+#logo-title {
+    margin: 0; /* Remove default margin */
+    font-size: 16pt; /* Set font size for the title */
+    text-align: right; /* Align text to the right */
+    margin-right: 20px; /* Add space to the right of the title */
+}
+
+/* Styles for the dashed grid paper background */
+.dashed-grid-paper {
+    --grid-size: 30px; /* Set the size of the grid cells */
+    --grid-strength: 1px; /* Set the thickness of the grid lines */
+    --grid-dash: 10px; /* Set the length of the dashes in the grid */
+    --grid-gap: 5px; /* Set the gap between the dashes */
+    --grid-color: #ddd; /* Set the color of the grid lines */
+    --paper-color: #fff; /* Set the background color of the paper */
+
+    background-color: var(--paper-color); /* Set the background color */
+    background-size: var(--grid-dash) var(--grid-dash), var(--grid-size) var(--grid-size); /* Define the background image size */
+    background-image:
+        linear-gradient(to bottom, transparent var(--grid-gap), var(--paper-color) var(--grid-gap)),
+        linear-gradient(to right, var(--grid-color) var(--grid-strength), transparent var(--grid-strength)),
+        linear-gradient(to right, transparent var(--grid-gap), var(--paper-color) var(--grid-gap)),
+        linear-gradient(to bottom, var(--grid-color) var(--grid-strength), transparent var(--grid-strength)); /* Define the background images for the grid */
+}
+
+/* Styles for the canvas element */
+#canvas {
+    width: 100vw; /* Set width to 100% of viewport width */
+    height: 100vh; /* Set height to 100% of viewport height */
+    position: fixed; /* Fix position relative to the viewport */
+    top: 0; /* Position at the top of the viewport */
+    left: 0; /* Position at the left of the viewport */
+    background: transparent; /* Set background to transparent */
+    z-index: -1; /* Set stacking order behind other elements */
+}
+
+/* Styles for the periodic table modal */
+#periodic-table {
+    background: white; /* Set background color */
+    width: 720px; /* Set width of the modal */
+    height: 420px; /* Set height of the modal */
+    border: 1px solid black; /* Add border around the modal */
+    position: fixed; /* Fix position relative to the viewport */
+    top: 50%; left: 50%; /* Center the modal in the viewport */
+    transform: translate(-50%, -50%); /* Center the modal */
+    box-shadow: 0px 3px 12px 0px rgba(0, 0, 0, 0.15); /* Add shadow for depth effect */
+    z-index: 99; /* Set stacking order above other elements */
+}
+
+/* Styles for the help text section */
+#help-text {
+    width: 400px; /* Set width of the help text container */
+    padding-top: 20px; /* Add padding to the top */
+    padding-right: 20px; /* Add padding to the right */
+    position: fixed; /* Fix position relative to the viewport */
+    height: calc(100vh - 180px); /* Set height relative to viewport */
+    overflow-y: scroll; /* Add vertical scroll if needed */
+    right: 0; /* Align to the right of the viewport */
+}
+
+/* Styles for the list within the help text section */
+#help-text > ul {
+    padding: 0; /* Remove default padding */
+    margin: 0; /* Remove default margin */
+}
+
+/* Styles for the molecule stats section */
+#molecule-stats { 
+    margin-top: 36px; /* Add top margin */
+}
+
+/* Styles for tables within the molecule stats section */
+#molecule-stats > table {
+    border-collapse: collapse; /* Collapse borders between table cells */
+}
+#molecule-stats th,
+#molecule-stats td {
+    border: 1px solid #aaa; /* Add border around table cells */
+    margin: 0; /* Remove default margin */
+    padding: 8px; /* Add padding inside table cells */
+}
+
+/* Styles for the control container */
+.control-container {
+    background: white; /* Set background color */
+    padding: 15px; /* Add padding */
+    margin: 10px; /* Add margin around the container */
+    box-shadow: 0px 3px 12px 0px rgba(0, 0, 0, 0.05); /* Add shadow for depth effect */
+    border: 1px solid #bbb; /* Add border around the container */
+}
+
+/* Styles for buttons */
+button {
+    cursor: pointer; /* Set cursor to pointer on hover */
+    font-family: "Montserrat", sans-serif; /* Set font for buttons */
+    outline: none; /* Remove default outline */
+}
+
+/* Styles for the examples container */
+#examples {
+    padding: 10px; /* Add padding */
+    border-radius: 0px; /* Remove border radius */
+    width: 260px; /* Set width */
+    border: 1px solid #aaa; /* Add border */
+    outline: none; /* Remove default outline */
+    font-family: "Montserrat", sans-serif; /* Set font */
+}
+
+/* Styles for error messages */
+#errors {
+    color: #ff333a; /* Set text color for errors */
+}
+
+/* Styles for the VSPER image */
+#VSPER-img {
+    width: 70px; /* Set width */
+    height: 50px; /* Set height */
+    object-fit: contain; /* Ensure image fits within the container */
+    object-position: center; /* Center the image */
+    margin: 0 auto; /* Center horizontally */
+}
+
+/* Styles for the VSPER container */
+.vsper-container {
+    position: fixed; /* Fix position relative to the viewport */
+    text-align: center; /* Center text inside container */
+    bottom: 10px; /* Position 10px from the bottom */
+    left: 10px; /* Position 10px from the left */
+    border: 1px solid #333; /* Add border */
+    padding: 10px; /* Add padding */
+    background: white; /* Set background color */
+    box-shadow: 0px 3px 12px 0px rgba(0, 0, 0, 0.05); /* Add shadow for depth effect */
+}
+
+/* Styles for element buttons */
+.el-btn {
+    padding: 10px; /* Add padding */
+    border-radius: 0px !important; /* Remove border radius */
+    background-color: white; /* Set background color */
+    color: black; /* Set text color */
+    border: 1px solid #aaa; /* Add border */
+    text-align: center; /* Center text */
+    user-select: none; /* Prevent text selection */
+}
+.el-btn:hover {
+    border: 1px solid #347ad1; /* Change border color on hover */
+    background-color: #dbebff; /* Change background color on hover */
+}
+.el-btn:focus,
+.el-btn.selected {
+    border: 1px solid #1a5196; /* Change border color when focused or selected */
+    background-color: #6dacfc; /* Change background color when focused or selected */
+}
+
+/* Styles for the selected element display */
+#selected-element {
+    font-size: 36pt; /* Set font size */
+    border: 1px solid #777; /* Add border */
+    float: left; /* Float to the left */
+    width: 110px; /* Set width */
+    height: 90px; /* Set height */
+    margin-right: 20px; /* Add margin to the right */
+    text-align: center; /* Center text */
+    line-height: 90px; /* Align text vertically */
+    font-weight: bold; /* Set font weight */
+    position: relative; /* Set position relative for ::after pseudo-element */
+
+    background-image: linear-gradient(45deg, #ffffff 25%, #f5f5f5 25%, #f5f5f5 50%, #ffffff 50%, #ffffff 75%, #f5f5f5 75%, #f5f5f5 100%); /* Set background gradient */
+    background-size: 56.57px 56.57px; /* Set background size */
+}
+#selected-element::after {
+    content: "Selected element"; /* Add text content */
+    position: absolute; /* Position absolutely within #selected-element */
+    top: 0; /* Align to the top */
+    left: 0; /* Align to the left */
+    color: gray; /* Set text color */
+    font-size: 8pt; /* Set font size */
+    width: 100%; /* Set width to 100% of parent */
+    height: 20px; /* Set height */
+    line-height: 20px; /* Align text vertically */
+    font-weight: normal; /* Set font weight */
+}
+
+/* Styles for charge buttons */
+.charge-btn {
+    padding: 5px; /* Add padding */
+    width: 32px; /* Set width */
+    height: 32px; /* Set height */
+    border-radius: 50%; /* Make button circular */
+    background-color: white; /* Set background color */
+    color: black; /* Set text color */
+    border: 1px solid #aaa; /* Add border */
+    text-align: center; /* Center text */
+    user-select: none; /* Prevent text selection */
+}
+.charge-btn:hover {
+    border: 1px solid #347ad1; /* Change border color on hover */
+    background-color: #dbebff; /* Change background color on hover */
+}
+.charge-btn:focus,
+.charge-btn.selected {
+    border: 1px solid #1a5196; /* Change border color when focused or selected */
+    background-color: #6dacfc; /* Change background color when focused or selected */
+}
+
+/* Styles for electronegativity label */
+#electronegativity { 
+    color: #347ad1; /* Set text color */
+}
+
+/* Styles for period 3 label */
+#period3 { 
+    color: #fc8c03; /* Set text color */
+}
+
+/* Styles for the algorithm modal */
+#algo-modal {
+    position: fixed; /* Fix position relative to the viewport */
+    z-index: 99998; /* Set stacking order above most elements */
+    background-color: rgba(0, 0, 0, 0.6); /* Set semi-transparent background */
+    width: 100vw; /* Set width to 100% of viewport width */
+    height: 100vh; /* Set height to 100% of viewport height */
+    top: 0; /* Position at the top */
+    left: 0; /* Position at the left */
+    overflow: auto; /* Allow scrolling if content overflows */
+}
+
+/* Styles for the modal content */
+#algo-modal > .modal {
+    padding: 15px; /* Add padding */
+    max-width: 90%; /* Set maximum width */
+    width: 700px; /* Set width */
+    background: white; /* Set background color */
+    box-shadow: 0px 3px 12px 0px rgba(0, 0, 0, 0.05); /* Add shadow for depth effect */
+    border: 1px solid #bbb; /* Add border */
+
+    z-index: 99999; /* Set stacking order above all elements */
+    height: 90vh; /* Set height to 90% of viewport height */
+    overflow-y: scroll; /* Add vertical scroll if needed */
+    position: fixed; /* Fix position relative to the viewport */
+    top: 50%; left: 50%; /* Center the modal in the viewport */
+    transform: translate(-50%, -50%); /* Center the modal */
+    box-sizing: border-box; /* Include border and padding in element's total width and height */
+}
+
+/* Styles for code blocks */
+.code-block {
+    max-width: 670px; /* Set maximum width */
+    overflow-x: auto; /* Add horizontal scroll if needed */
+    box-sizing: border-box; /* Include border and padding in element's total width and height */
+    background: #333; /* Set background color */
+    color: #ccc; /* Set text color */
+    padding: 15px; /* Add padding */
+}
